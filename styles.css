@@ -3,7 +3,8 @@
     --primary-font: Helvetica Now Display, -apple-system, Roboto, Helvetica, sans-serif;
     --background-color: #121212;
     --text-color: #ffffff;
-    --link-color: #bb86fc;
+    --link-color: #ffffff;
+    --highlight-color: #dddddd;
     --nav-background: none;
 }
 
@@ -532,7 +533,7 @@ a {
 
 
 .last-remark-content {
-    margin-top: 20vh;
+    margin-top: 24vh;
     grid-column: 8 / span 6; /* Span 6 columns out of 12 (half) */
     display: flex;
     flex-direction: column;
@@ -564,7 +565,7 @@ a {
     display: grid;
     grid-template-columns: repeat(12, 1fr); 
     background-color: var(--background-color);
-    margin-top: 20vh;
+    margin-top: 8vh;
     margin-bottom: 0;
     margin-right: 0;
     margin-left: 0;
