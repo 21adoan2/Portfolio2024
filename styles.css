@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 :root {
     --Gray-300: #a2a4a9;
-    --primary-font: Helvetica Now Display, -apple-system, Roboto, Helvetica, sans-serif;
+    /* --primary-font: Helvetica Now Display, -apple-system, Roboto, Helvetica, sans-serif; */
+    --primary-font: 'Inter Tight', Arial, sans-serif;
     --background-color: #121212;
     --text-color: #ffffff;
     --link-color: #ffffff;
@@ -111,16 +114,25 @@ body {
 }
 
 /* Define a class for large text */
+.title-text {
+    font-size: 5rem; /* Adjust the size as needed */
+    font-weight: 550; /* Optional: make the text bold */
+    line-height: 1.1; /* Optional: adjust line height */
+    margin: 0px;
+    font-family: 'Inter Tight', sans-serif;
+}
+
+/* Define a class for large text */
 .large-text {
     font-size: 5rem; /* Adjust the size as needed */
-    font-weight: bold; /* Optional: make the text bold */
+    font-weight: 500; /* Optional: make the text bold */
     line-height: 1; /* Optional: adjust line height */
     margin: 0px;
 }
 
 .large-header {
     font-size: 5rem; /* Adjust the size as needed */
-    font-weight: bold; /* Optional: make the text bold */
+    font-weight: 500; /* Optional: make the text bold */
     line-height: 1; /* Optional: adjust line height */
     margin-bottom: 10vh;
 }
@@ -187,14 +199,14 @@ body {
 /* Style for the title */
 .overlay-text .title {
     font-size: 2.5rem; /* Adjust the size as needed */
-    font-weight: bold; /* Make the text bold */
+    font-weight: 650; /* Make the text bold */
     margin: 0; /* Remove default margin */
     color: var(white); /* Set the text color */
 }
 
 /* Style for the subtext */
 .overlay-text .subtext {
-    font-weight: bold; /* Optional: make the text bold */;
+    font-weight: 550; /* Optional: make the text bold */;
     font-size: 1rem; /* Adjust the size as needed */
     margin: 0; /* Remove default margin */
     color: var(--Gray-300); /* Set the text color */
@@ -411,6 +423,7 @@ a {
 #my-story {
     display: grid;
     grid-template-columns: repeat(12, 1fr); /* Define 12 columns */
+    margin-bottom: 20vh;
 }
 
 .story-content {
@@ -418,13 +431,15 @@ a {
     grid-column: 1 / span 6; /* Span 6 columns out of 12 (half) */
     display: flex;
     flex-direction: column;
-    gap: 12px; /* Space between elements */
+    justify-content: space-between;
+    /* gap: 12px; Space between elements */
+    height: 100%;
 }
 
 .story-item{
     display: grid;
-    margin-bottom: 20vh;
-    gap: 16px; /* Space between elements */
+    /* margin-bottom: 20vh; */
+    gap: 16px; 
 }
 
 .story-content p1, .story-content h1, .story-content p2 {
@@ -440,7 +455,7 @@ a {
 
 .story-content h1 {
     font-size: 2.5rem; /* Adjust the size as needed */
-    font-weight: bold; /* Make the text bold */
+    font-weight: 600; /* Make the text bold */
 }
 
 .story-content p2 {
@@ -460,6 +475,8 @@ a {
     grid-column: 8 / span 6; /* Start on the 7th column and span 6 columns */
     display: flex;
     flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
     gap: 12px; /* Space between elements */
 }
 
@@ -531,14 +548,18 @@ a {
     margin-bottom: 40px; /* Space between sections */
 }
 
+.last-remark-grid-section {
+    margin-top: 20px;
+    grid-column: span 12;
+}
 
 .last-remark-content {
-    margin-top: 24vh;
     grid-column: 8 / span 6; /* Span 6 columns out of 12 (half) */
     display: flex;
     flex-direction: column;
     gap: 12px; /* Space between elements */
-    margin-bottom: 10vh;
+    margin-bottom: 18vh;
+    height: 100%;
 }
 
 .last-remark-content p1, .last-remark-content h1 {
