@@ -1,9 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 :root {
     --Gray-300: #a2a4a9;
-    /* --primary-font: Helvetica Now Display, -apple-system, Roboto, Helvetica, sans-serif; */
-    --primary-font: 'Inter Tight', Arial, sans-serif;
+    --primary-font: Helvetica Now Display, -apple-system, Roboto, Helvetica, sans-serif;
     --background-color: #121212;
     --text-color: #ffffff;
     --link-color: #ffffff;
@@ -80,6 +77,9 @@ body {
 .grid-section {
     margin-top: 20px; /* Space between sections */
     grid-column: span 12;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch; /* Ensures both sections stretch to the same height */
 }
 
 /* Define the info container to start on the 5th column */
@@ -114,31 +114,24 @@ body {
 }
 
 /* Define a class for large text */
-.title-text {
-    font-size: 5rem; /* Adjust the size as needed */
-    font-weight: 550; /* Optional: make the text bold */
-    line-height: 1.1; /* Optional: adjust line height */
-    margin: 0px;
-    font-family: 'Inter Tight', sans-serif;
-}
-
-/* Define a class for large text */
 .large-text {
     font-size: 5rem; /* Adjust the size as needed */
-    font-weight: 500; /* Optional: make the text bold */
+    font-weight: bold; /* Optional: make the text bold */
     line-height: 1; /* Optional: adjust line height */
     margin: 0px;
 }
 
 .large-header {
     font-size: 5rem; /* Adjust the size as needed */
-    font-weight: 500; /* Optional: make the text bold */
+    font-weight: bold; /* Optional: make the text bold */
     line-height: 1; /* Optional: adjust line height */
     margin-bottom: 10vh;
 }
 
 /* Work grid styles */
 .work-grid {
+    width: 100%;
+    max-width: 100%; /* Prevent any max-width constraints */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     margin: none;
@@ -199,14 +192,14 @@ body {
 /* Style for the title */
 .overlay-text .title {
     font-size: 2.5rem; /* Adjust the size as needed */
-    font-weight: 650; /* Make the text bold */
+    font-weight: bold; /* Make the text bold */
     margin: 0; /* Remove default margin */
     color: var(white); /* Set the text color */
 }
 
 /* Style for the subtext */
 .overlay-text .subtext {
-    font-weight: 550; /* Optional: make the text bold */;
+    font-weight: bold; /* Optional: make the text bold */;
     font-size: 1rem; /* Adjust the size as needed */
     margin: 0; /* Remove default margin */
     color: var(--Gray-300); /* Set the text color */
@@ -245,7 +238,7 @@ body {
 /* Add spacing specifically for the playground section */
 .play-section {
     margin-top: 20vh; /* Adjust the value as needed to create more space */
-    margin-bottom: 30vh;
+    margin-bottom: 20vh;
 }
 
 .play-item {
@@ -431,19 +424,20 @@ a {
     grid-column: 1 / span 6; /* Span 6 columns out of 12 (half) */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    /* gap: 12px; Space between elements */
-    height: 100%;
+    gap: 12px; /* Space between elements */
+    flex: 1; /* Ensures both take equal space */
+    justify-content: space-between; /* Aligns content evenly */
 }
 
 .story-item{
     display: grid;
-    /* margin-bottom: 20vh; */
-    gap: 16px; 
+    margin-bottom: 20vh;
+    gap: 16px; /* Space between elements */
 }
 
-.story-content p1, .story-content h1, .story-content p2 {
+.story-content p1, .story-content h1, .story-content p2, .story-content p3 {
     margin: 0; /* Remove default margin */
+    text-align: left; /* Align text to the left */
 }
 
 .story-content p1 {
@@ -455,7 +449,7 @@ a {
 
 .story-content h1 {
     font-size: 2.5rem; /* Adjust the size as needed */
-    font-weight: 600; /* Make the text bold */
+    font-weight: bold; /* Make the text bold */
 }
 
 .story-content p2 {
@@ -475,17 +469,23 @@ a {
     grid-column: 8 / span 6; /* Start on the 7th column and span 6 columns */
     display: flex;
     flex-direction: column;
-    height: 100%;
-    justify-content: space-between;
     gap: 12px; /* Space between elements */
+    flex: 1; /* Ensures both take equal space */
+    justify-content: space-between; /* Aligns content evenly */
 }
 
 .story-pictures img {
     opacity: 0.50;
     width: 100%; /* Ensure images take full width of the container */
+    height: 100%; /* Adjust height to fill the container */
     border-radius: 8px; /* Optional: add border radius to images */
     object-fit: cover; /* Crop the image if it expands further than the width of the desktop */
     height: 178px;
+}
+
+/* Remove extra margin-bottom for the last story-item */
+.story-content .story-item:last-child {
+    margin-bottom: 0; /* Remove margin-bottom for the last item */
 }
 
 .resume-content {
@@ -548,18 +548,14 @@ a {
     margin-bottom: 40px; /* Space between sections */
 }
 
-.last-remark-grid-section {
-    margin-top: 20px;
-    grid-column: span 12;
-}
 
 .last-remark-content {
+    margin-top: 24vh;
     grid-column: 8 / span 6; /* Span 6 columns out of 12 (half) */
     display: flex;
     flex-direction: column;
     gap: 12px; /* Space between elements */
-    margin-bottom: 18vh;
-    height: 100%;
+    margin-bottom: 10vh;
 }
 
 .last-remark-content p1, .last-remark-content h1 {
@@ -630,4 +626,3 @@ a {
     color: var(--Gray-300); /* Set the text color */
     font-weight: 500;
 }
-
