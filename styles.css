@@ -77,6 +77,9 @@ body {
 .grid-section {
     margin-top: 20px; /* Space between sections */
     grid-column: span 12;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch; /* Ensures both sections stretch to the same height */
 }
 
 /* Define the info container to start on the 5th column */
@@ -127,6 +130,8 @@ body {
 
 /* Work grid styles */
 .work-grid {
+    width: 100%;
+    max-width: 100%; /* Prevent any max-width constraints */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     margin: none;
@@ -233,7 +238,7 @@ body {
 /* Add spacing specifically for the playground section */
 .play-section {
     margin-top: 20vh; /* Adjust the value as needed to create more space */
-    margin-bottom: 30vh;
+    margin-bottom: 20vh;
 }
 
 .play-item {
@@ -411,6 +416,7 @@ a {
 #my-story {
     display: grid;
     grid-template-columns: repeat(12, 1fr); /* Define 12 columns */
+    margin-bottom: 20vh;
 }
 
 .story-content {
@@ -419,6 +425,8 @@ a {
     display: flex;
     flex-direction: column;
     gap: 12px; /* Space between elements */
+    flex: 1; /* Ensures both take equal space */
+    justify-content: space-between; /* Aligns content evenly */
 }
 
 .story-item{
@@ -427,8 +435,9 @@ a {
     gap: 16px; /* Space between elements */
 }
 
-.story-content p1, .story-content h1, .story-content p2 {
+.story-content p1, .story-content h1, .story-content p2, .story-content p3 {
     margin: 0; /* Remove default margin */
+    text-align: left; /* Align text to the left */
 }
 
 .story-content p1 {
@@ -461,14 +470,22 @@ a {
     display: flex;
     flex-direction: column;
     gap: 12px; /* Space between elements */
+    flex: 1; /* Ensures both take equal space */
+    justify-content: space-between; /* Aligns content evenly */
 }
 
 .story-pictures img {
     opacity: 0.50;
     width: 100%; /* Ensure images take full width of the container */
+    height: 100%; /* Adjust height to fill the container */
     border-radius: 8px; /* Optional: add border radius to images */
     object-fit: cover; /* Crop the image if it expands further than the width of the desktop */
     height: 178px;
+}
+
+/* Remove extra margin-bottom for the last story-item */
+.story-content .story-item:last-child {
+    margin-bottom: 0; /* Remove margin-bottom for the last item */
 }
 
 .resume-content {
