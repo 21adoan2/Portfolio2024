@@ -416,17 +416,18 @@ a {
 #my-story {
     display: grid;
     grid-template-columns: repeat(12, 1fr); /* Define 12 columns */
+    padding-top: 10vh;
     margin-bottom: 20vh;
+    align-items: stretch; /* Ensures both sections stretch to the same height */
 }
 
 .story-content {
-    margin-top: 10vh;
     grid-column: 1 / span 6; /* Span 6 columns out of 12 (half) */
     display: flex;
     flex-direction: column;
     gap: 12px; /* Space between elements */
-    flex: 1; /* Ensures both take equal space */
     justify-content: space-between; /* Aligns content evenly */
+    align-self: stretch;
 }
 
 .story-item{
@@ -465,22 +466,23 @@ a {
 }
 
 .story-pictures {
-    margin-top: 10vh;
-    grid-column: 8 / span 6; /* Start on the 7th column and span 6 columns */
+    grid-column: 8 / span 5; /* Start on the 8th column and span 5 columns */
     display: flex;
     flex-direction: column;
-    gap: 12px; /* Space between elements */
-    flex: 1; /* Ensures both take equal space */
-    justify-content: space-between; /* Aligns content evenly */
+    gap: 4%; /* Space between elements */
+    align-self: stretch; /* Stretch to match the grid row height */
+    min-height: 0; /* Allow the container to shrink to the row's height */
+    height: 100%; /* Match the row height from the grid */
+    overflow: hidden; /* Prevent the image column from pushing content down */
 }
 
 .story-pictures img {
     opacity: 0.50;
     width: 100%; /* Ensure images take full width of the container */
-    height: 100%; /* Adjust height to fill the container */
+    flex: 1 1 0%; /* Make images fill equal vertical space and shrink if needed */
+    min-height: 0; /* Allow flex items to shrink inside the container */
     border-radius: 8px; /* Optional: add border radius to images */
     object-fit: cover; /* Crop the image if it expands further than the width of the desktop */
-    height: 178px;
 }
 
 /* Remove extra margin-bottom for the last story-item */
